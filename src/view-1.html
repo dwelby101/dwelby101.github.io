@@ -1,0 +1,156 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animatable.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+
+
+<dom-module id="view-1">
+
+  <style is="custom-style">
+      body {
+        overflow: hidden;
+        @apply(--layout-fullbleed);
+        @apply(--layout-vertical);
+      }
+      .toolbar {
+        position: relative;
+        padding: 8px;
+        background-color: white;
+        z-index: 12;
+      }
+      neon-animated-pages {
+        @apply(--layout-flex);
+      }
+      neon-animatable {
+        color: white;
+        @apply(--layout-horizontal);
+        @apply(--layout-center-center);
+        @apply(--paper-font-display4);
+      }
+      neon-animatable:nth-child(1) {
+        background: var(--paper-red-500);
+      }
+      neon-animatable:nth-child(2) {
+        background: var(--paper-blue-500);
+      }
+      neon-animatable:nth-child(3) {
+        background: var(--paper-orange-500);
+      }
+      neon-animatable:nth-child(4) {
+        background: var(--paper-green-500);
+      }
+      neon-animatable:nth-child(5) {
+        background: var(--paper-purple-500);
+      }
+  </style>
+
+  <template is="dom-bind">
+
+     <div class="toolbar">
+       <button on-click="_onPrevClick">&#8678;</button>
+       <button on-click="_onNextClick">&#8680;</button>
+       <button on-click="_onUpClick">&#8679;</button>
+       <button on-click="_onDownClick">&#8681;</button>
+     </div>
+
+     <neon-animated-pages id="pages" selected="[[selected]]" entry-animation="[[entryAnimation]]" exit-animation="[[exitAnimation]]">
+       <neon-animatable>
+         <p>TO DO:
+         <ul>
+           <li>Explain the aim of the demo</li>
+             <ol>
+               <li>Why accessibility is important</li>
+               <li>Types of accessibility considerations</li>
+               <li>Basic do's & dont's</li>
+               <li>test</li>
+             </ol>
+           <li>Show Vote A demo - bad accessibility</li>
+           <ul>
+             <li>Display why it is bad</li>
+             <li>Use online tools to rate accessibility</li>
+           </ul>
+           <li>Show Vote B demo - better accessibility</li>
+           <ul>
+             <li>Display why it is better</li>
+             <li>Use online tools to rate accessibility</li>
+           </ul>
+       </neon-animatable>
+       <neon-animatable>2</neon-animatable>
+       <neon-animatable>3</neon-animatable>
+       <neon-animatable>4</neon-animatable>
+       <neon-animatable>5</neon-animatable>
+     </neon-animated-pages>
+
+   </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'view-1',
+
+      properties: {
+
+        selected: {
+          type: Number,
+            value: 0
+        },
+
+        entryAnimation: {
+          type: String,
+          value: "slide-from-left-animation"
+        },
+
+        exitAnimation: {
+          type: String,
+          value: "slide-right-animation"
+        }
+      },
+
+      _onPrevClick = function() {
+        this.entryAnimation = 'slide-from-left-animation';
+        this.exitAnimation = 'slide-right-animation';
+        this.selected = this.selected === 0 ? 4 : (this.selected - 1);
+      },
+      _onNextClick = function() {
+        this.entryAnimation = 'slide-from-right-animation';
+        this.exitAnimation = 'slide-left-animation';
+        this.selected = selected === 4 ? 0 : (selected + 1);
+      },
+      _onUpClick = function() {
+        this.entryAnimation = 'slide-from-top-animation';
+        this.exitAnimation = 'slide-down-animation';
+        this.selected = selected === 4 ? 0 : (selected + 1);
+      },
+      _onDownClick = function() {
+        this.entryAnimation = 'slide-from-bottom-animation';
+        this.exitAnimation = 'slide-up-animation';
+        this.selected = selected === 0 ? 4 : (selected - 1);
+      }
+
+    });
+
+
+        //  observers: [
+        //    '_onPrevClick(selected, entryAnimation, exitAnimation)',
+        //    '_onNextClick(selected, entryAnimation, exitAnimation)',
+        //    '_onUpClick(selected, entryAnimation, exitAnimation)',
+        //    '_onDownClick(selected, entryAnimation, exitAnimation)'
+        //  ],
+
+  </script>
+
+</dom-module>
