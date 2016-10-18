@@ -21,20 +21,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="./slides/slide-5.html">
 
 
-
 <dom-module id="view-1">
   
   <template>
     <style>
         body {
-          overflow: hidden;
-          @apply(--layout-fullbleed);
-          @apply(--layout-vertical);
+          overflow: scroll;
+          @apply(--layout);
         }
         .toolbar {
           position: relative;
           padding: 8px;
-          background-color: white;
+          background-color: #4285f4;
           z-index: 12;
         }
         
@@ -50,15 +48,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         neon-animatable {
           display: block;
           overflow: auto;
-          width: 100%;
+          width: 70%;
           height: 100%;
-          color: white;
-          @apply(--layout-horizontal);
-          @apply(--layout-center-center);
-          @apply(--paper-font-display0.5);
+          padding: 0 15%;
+          color: #444;
+          @apply(--layout);
+          @apply(--layout-flex-3);
+          
         }
         neon-animatable:nth-child(1) {
-          background: var(--paper-red-500);
+          background: white;
         }
         neon-animatable:nth-child(2) {
           background: var(--paper-blue-500);
@@ -127,7 +126,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   
     _fullscreen: function() {
       this.fullscreen = !this.fullscreen
-      console.log('this.fullscreen = ', this.fullscreen);
+console.log('this.fullscreen = ', this.fullscreen);
       if(this.fullscreen) {
         this.applied = 'fullscreen'
       }

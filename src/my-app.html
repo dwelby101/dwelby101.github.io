@@ -40,6 +40,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app-header paper-icon-button {
         --paper-icon-button-ink-color: white;
       }
+      
+      .header-title {
+        padding-left: 12%;
+        font-size: 30px;
+      }
 
       .drawer-list {
         margin: 0 20px;
@@ -69,11 +74,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         data="{{routeData}}"
         tail="{{subroute}}"></app-route>
 
-    <app-drawer-layout fullbleed>
+    <app-drawer-layout force-narrow fullbleed>
 
       <!-- Drawer content -->
       <app-drawer>
-        <app-toolbar>Menu</app-toolbar>
+        <app-toolbar>
+          Menu
+          <paper-icon-button style="display: block;" icon="close" drawer-toggle ></paper-icon-button>
+        </app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="view-1" href="/view-1">Slides</a>
           <a name="vote-a" href="/vote-a">Vote A</a>
@@ -82,12 +90,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </app-drawer>
 
       <!-- Main content -->
-      <app-header-layout has-scrolling-region>
+      <app-header-layout has-scrolling-region fullbleed>
 
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
-            <paper-icon-button style="display: block;" icon="menu" drawer-toggle on-tap="resetLayout"></paper-icon-button>
-            <div title>Accessibility Demo - Dave Welby</div>
+            <paper-icon-button style="display: block; float: right;" icon="menu" drawer-toggle ></paper-icon-button>
+            <div class="header-title"title>Accessibility Demo - Dave Welby</div>
           </app-toolbar>
         </app-header>
 
