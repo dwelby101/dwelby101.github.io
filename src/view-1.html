@@ -48,10 +48,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           @apply(--layout-flex);
         }
         neon-animatable {
+          display: block;
+          overflow: auto;
+          width: 100%;
+          height: 100%;
           color: white;
           @apply(--layout-horizontal);
           @apply(--layout-center-center);
-          @apply(--paper-font-display4);
+          @apply(--paper-font-display0.5);
         }
         neon-animatable:nth-child(1) {
           background: var(--paper-red-500);

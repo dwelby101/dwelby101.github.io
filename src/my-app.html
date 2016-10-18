@@ -86,7 +86,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
-            <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+            <paper-icon-button style="display: block;" icon="menu" drawer-toggle on-tap="resetLayout"></paper-icon-button>
             <div title>Accessibility Demo - Dave Welby</div>
           </app-toolbar>
         </app-header>
@@ -128,6 +128,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       _pageChanged: function(page) {
+        console.log('page = ', page);
         // load page import on demand.
         this.importHref(
           this.resolveUrl(page + '.html'), null, null, true);
