@@ -2,25 +2,149 @@
 <dom-module id="slide-4">
 
   <template>
-
     <style>
       :host {
         display: block;
         padding: 10px;
       }
+      
+      h1 {
+        border-left: 4px solid blue;
+        padding-left: 10px;
+      }
+      
+      h2 {
+        border-left: 4px solid green;
+        padding-left: 10px;
+      }
+
+      pre {
+        background-color: beige;
+      }
+      button {
+        font-size: 30px;
+      }
+      .button {
+        display: inline-block;
+        align-items: flex-start;
+        text-align: center;
+        cursor: default;
+        color: buttontext;
+        background-color: buttonface;
+        box-sizing: border-box;
+        padding: 2px 6px 3px;
+        border-width: 2px;
+        border-style: outset;
+        border-color: buttonface;
+      }
+      .container {
+        padding-bottom: 10%;
+      }
+      
+      .tag {
+        color: #3b78e7;
+      }
+
     </style>
-
-    <div>
-      <h1>Slide-4</h1>
+    
+    <div class="container">
+      <h1>
+        Tabindex
+      </h1>
+      
+      
+      <h2>
+        What is tabindex?
+      </h2>
+      <p>
+        <code>tabindex</code>  is a global attribute responsible for two things:
+        <br>
+        <ul>
+          <li>it sets the order of "focusable" elements</li>
+          <li>it makes an element focusable</li>
+        </ul>
+      </p>
+      <br>
+      The tabindex attribute is useful for 3 things:
+      <ul>
+        <li>It can make primitive DOM elements (originally non-focusable) focusable </li>
+        <li>It can define the tab order of a DOM element (considered anti-pattern)</li>
+        <li>It can remove focusability from a DOM element</li>
+      </ul>
+      
+      
+      <h2>
+        Why use tabindex?
+      </h2>
+      <p>
+        <ul>
+          <li>For people who navigate our web pages using a keyboard or screen reader they rely on the tab order to consume the content in a logical order.</li>
+          <li>Tabindex can be extremely useful for helping us create custom interactive elements.</li>
+          <li>For single page applications where a user may click a button that updates the DOM, tabindex can help us focus the relevant content - this is especially helpful for screen readers.</li>
+        </ul>
+      </p>
+      
+      
+      <h2>
+        Example use cases
+      </h2>
+      <p>
+        <h3>tabindex = -1</h3>
+        This is used for removing an element from the natural tab order, but the element can still be focused using the  <code>focus()</code> method.
+        <pre><code>
+          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"foo"</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"-1"</span><span class="tag">&gt;</span><span class="pln">I'm not keyboard focusable</span><span class="tag">&lt;/button&gt;</span>
+          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">on-tap</span><span class="pun">=</span><span class="atv">"</span><span class="pln">handleTap</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">Focus my sibling</span><span class="tag">&lt;/button&gt;</span>
+        </code></pre>
+        <button id="foo" tabindex="-1">I'm not keyboard focusable</button>
+        <button on-tap="handleTap"> my sibling</button>
+      </p>
+        
+      <br>
+      <p>
+        <h3>tabindex = 0</h3>
+        This is used for allowing an element to be focusable, it places the element in the natural tab order.
+        <pre><code>
+          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"0"</span><span class="tag">&gt;</span><span class="pln">one</span><span class="tag">&lt;/button&gt;</span>
+          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"0"</span><span class="tag">&gt;</span><span class="pln">two</span><span class="tag">&lt;/button&gt;</span>
+          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"0"</span><span class="tag">&gt;</span><span class="pln">three</span><span class="tag">&lt;/button&gt;</span>
+        </code></pre>
+      
+        <div>
+          <div class="button" tabindex="0">one</div>
+          <div class="button" tabindex="0">two</div>
+          <div class="button" tabindex="0">three</div>
+        </div>
+      </p>
+      
+      <br>
+      <p>
+        <h3>tabindex = 3, 2, 1 (anti-pattern)</h3>
+        Any tabindex greater than 0 jumps the element to the front of the natural tab order.<br>
+        If there are multiple elements with a tabindex greater than 0, the tab order starts from the lowest value that is greater than zero and works its way up.<br>
+        Using a tabindex greater than 0 is considered an anti-pattern.
+        <pre><code>
+          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"3"</span><span class="tag">&gt;</span><span class="pln">one</span><span class="tag">&lt;/button&gt;</span>
+          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"2"</span><span class="tag">&gt;</span><span class="pln">two</span><span class="tag">&lt;/button&gt;</span>
+          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"1"</span><span class="tag">&gt;</span><span class="pln">three</span><span class="tag">&lt;/button&gt;</span>
+        </code></pre>
+      
+        <div>
+          <div class="button" tabindex="3">one</div>
+          <div class="button" tabindex="2">two</div>
+          <div class="button" tabindex="1">three</div>
+        </div>
+      </p>
     </div>
-
   </template>
-
   <script>
 
     Polymer({
 
-      is: 'slide-4'
+      is: 'slide-4',
+      handleTap: function() {
+        var elem = Polymer.dom(this.root).querySelector('#foo');
+        elem.focus();
+      }
 
     });
 

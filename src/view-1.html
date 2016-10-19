@@ -35,41 +35,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           background-color: #4285f4;
           z-index: 12;
         }
-        
-        .fullscreen {
-          position: absolute;
-          top: 0;
-          width: 100%;
-          height:100%;
+        :focus {
+          border: 2px solid red;
+          background-color: red;
         }
+        
         neon-animated-pages {
           @apply(--layout-flex);
         }
         neon-animatable {
+          margin-top: 100px;
           display: block;
           overflow: auto;
+          max-width: 70%;
           width: 70%;
           height: 100%;
           padding: 0 15%;
           color: #444;
           @apply(--layout);
           @apply(--layout-flex-3);
-          
-        }
-        neon-animatable:nth-child(1) {
           background: white;
         }
-        neon-animatable:nth-child(2) {
-          background: var(--paper-blue-500);
-        }
         neon-animatable:nth-child(3) {
-          background: var(--paper-orange-500);
         }
         neon-animatable:nth-child(4) {
-          background: var(--paper-green-500);
         }
         neon-animatable:nth-child(5) {
-          background: var(--paper-purple-500);
         }
     </style>
 
@@ -78,7 +69,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        <button on-click="_onNextClick">&#8680;</button>
        <button on-click="_onUpClick">&#8679;</button>
        <button on-click="_onDownClick">&#8681;</button>
-      <button on-click="_fullscreen">FS</button> 
      </div>
 
      <neon-animated-pages id="pages" style="display:table-row;" class="[[applied]]" selected="[[selected]]" entry-animation="[[entryAnimation]]" exit-animation="[[exitAnimation]]">
@@ -122,17 +112,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         value: ''
       }
       
-    },
-  
-    _fullscreen: function() {
-      this.fullscreen = !this.fullscreen
-console.log('this.fullscreen = ', this.fullscreen);
-      if(this.fullscreen) {
-        this.applied = 'fullscreen'
-      }
-      else{
-        this.applied = ''
-      }
     },
     
     _onPrevClick: function() {
