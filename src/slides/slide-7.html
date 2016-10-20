@@ -1,0 +1,202 @@
+
+<dom-module id="slide-7">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+        padding: 10px;
+        max-width: 100%;
+      }
+      
+      h1 {
+        border-left: 4px solid blue;
+        padding-left: 10px;
+        font-size: 2em;
+      }
+      h2 {
+        border-left: 4px solid green;
+        padding-left: 10px;
+      }
+      h3 {
+        border-left: 4px solid red;
+        padding-left: 10px;
+      }
+      p {
+        padding-left:10px;
+      }
+      pre {
+        background-color: beige;
+      }
+      button {
+        font-size: 30px;
+      }
+      img {
+        width: 100%;
+      }
+      .button {
+        display: inline-block;
+        align-items: flex-start;
+        text-align: center;
+        cursor: default;
+        color: buttontext;
+        background-color: buttonface;
+        box-sizing: border-box;
+        padding: 2px 6px 3px;
+        border-width: 2px;
+        border-style: outset;
+        border-color: buttonface;
+      }
+      .container {
+        padding-bottom: 10%;
+      }
+      .acc-img {
+        margin: 0 auto;
+        width: 400px;
+        height: 300px;
+      }
+      .tag {
+        color: #3b78e7;
+      }
+      .wrap {
+        padding: 0 5%;
+      }
+      .keycap {
+        background-color: #f1f1f1;
+        border: 1px solid #666;
+        border-radius: 5px;
+        color: #333;
+        padding: 0 2px;
+        margin: 1px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        min-width: 17px;
+        display: inline-block;
+        text-align: center;
+      }
+
+    </style>
+    
+    <section class="container">
+      <h1>
+        ARIA (Accessible Rich internet Applications)
+      </h1>
+      <br>
+      
+      <h2>
+        What is ARIA?
+      </h2>
+      <p>
+        ARIA is a set of special accessibility attributes which can be added to any markup, but is especially suited to HTML.
+        ARIA enables accessible navigation landmarks, JavaScript widgets, form hints and error messages, live content updates, and more.
+        The <b>role</b> attribute defines what the general type of object is (such as an article, alert, or slider).
+        Additional ARIA attributes provide other useful properties, such as a description for a form or the current value of a progressbar.
+        <div class="wrap">
+          <h3>Note</h3>
+          <p>
+            ARIA is implemented in most popular browsers and screen readers. However, implementations vary and older technologies don't support it well (if at all). Use either "safe" ARIA that degrades gracefully, or ask users to upgrade to newer technology.
+          </p>
+        </div>
+        
+        
+      </p>
+      <br>
+      
+      <h2>
+        Why should we use ARIA?
+      </h2>
+      <p>
+        There are times when a simple layout and native HTML just isn't possible with the designs we have to work with.
+        For example, currently there's no standardized HTML element for a very common UI construct, the pop-up menu.
+        Nor is there an HTML element that provides a semantic characteristic such as "the user needs to know about this as soon as possible".
+      </p>
+      <p>
+        ARIA is used for bridging areas with accessibility issues that can't be managed with native HTML.
+        It works by allowing you to specify attributes that modify the way an element is translated into the accessibility tree.
+      </p>
+      <br>
+      
+      <h2>
+        What can ARIA do?
+      </h2>
+      <p>
+         ARIA can add extra label and description text that is only exposed to assistive technology APIs.
+         <pre>
+           <code>
+             &lt;button aria-label="screen reader only label"&gt;&lt;/button&gt;
+           </code>
+         </pre>
+      </p>
+      <br>
+      <p>
+        ARIA can express semantic relationships between elements that extend the standard parent/child connection, such as a custom scrollbar that controls a specific region.
+        <pre>
+          <code>
+            &lt;div role="scrollbar" aria-controls="main"&gt;&lt;/div&gt;
+            &lt;div id="main"&gt;
+              . . .
+            &lt;/div&gt;
+          </code>
+        </pre>
+      </p>
+      
+      <p>
+        ARIA can make parts of the page "live", so they immediately inform assistive technology when they change.
+        <pre>
+          <code>
+            &lt;div aria-live="true"&gt;
+              &lt;span&gt;GOOG: $400&lt;/span&gt;
+            &lt;/div&gt;
+          </code>
+        </pre>
+      </p>
+      <br>
+      <h2>Roles</h2>
+      <p>
+        <img src="../../images/aria-roles.jpg" alt="a list of aria roles as a placeholder for html list in the future" />
+      </p>
+      <br>
+      <h2>Labels</h2>
+      <p>
+        ARIA provides several mechanisms for adding labels and descriptions to elements.
+        In fact, ARIA is the only way to add accessible help or description text.
+      </p>
+      <p>
+        <img src="../../images/aria-labels-1.jpg" alt="aria labels example" />
+      </p>
+      <p>
+        <img src="../../images/aria-labels-2.jpg" alt="aria labelled by example" />
+      </p>
+      <br>
+      <h2>Relationships</h2>
+      <p>
+        A relationship attribute creates a semantic relationship between elements on the page regardless of their DOM relationship. 
+      </p>
+      <p>
+        <img src="../../images/aria-owns.jpg" alt="aria labels example" />
+      </p>
+      <p>
+        <img src="../../images/aria-activedescendant.jpg" alt="aria activedescendant example" />
+      </p>
+      <p>
+        <img src="../../images/aria-describedby.jpg" alt="aria describedby example" />
+      </p>
+      <p>
+        <img src="../../images/aria-posinset.jpg" alt="aria pointset example" />
+      </p>
+    </section>
+  </template>
+  <script>
+
+    Polymer({
+
+      is: 'slide-7'
+
+    });
+
+  </script>
+
+</dom-module>
+<!--
+
+-->

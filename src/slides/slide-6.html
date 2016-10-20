@@ -1,0 +1,205 @@
+
+<dom-module id="slide-6">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+        padding: 10px;
+        max-width: 100%;
+      }
+      
+      h1 {
+        border-left: 4px solid blue;
+        padding-left: 10px;
+        font-size: 2em;
+      }
+      h2 {
+        border-left: 4px solid green;
+        padding-left: 10px;
+      }
+      h3 {
+        border-left: 4px solid red;
+        padding-left: 10px;
+      }
+      p {
+        padding-left:10px;
+      }
+      pre {
+        background-color: beige;
+      }
+      button {
+        font-size: 30px;
+      }
+      img {
+        width: 100%;
+      }
+      .button {
+        display: inline-block;
+        align-items: flex-start;
+        text-align: center;
+        cursor: default;
+        color: buttontext;
+        background-color: buttonface;
+        box-sizing: border-box;
+        padding: 2px 6px 3px;
+        border-width: 2px;
+        border-style: outset;
+        border-color: buttonface;
+      }
+      .container {
+        padding-bottom: 10%;
+      }
+      .acc-img {
+        margin: 0 auto;
+        width: 400px;
+        height: 300px;
+      }
+      .tag {
+        color: #3b78e7;
+      }
+      .wrap {
+        padding: 0 5%;
+      }
+      .keycap {
+        background-color: #f1f1f1;
+        border: 1px solid #666;
+        border-radius: 5px;
+        color: #333;
+        padding: 0 2px;
+        margin: 1px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        min-width: 17px;
+        display: inline-block;
+        text-align: center;
+      }
+
+    </style>
+    
+    <section class="container">
+      <h1>
+        Screen readers - VoiceOver
+      </h1>
+      <br>
+      
+      <h2>
+        What is VoiceOver?
+      </h2>
+      <p>
+        VoiceOver is a screen reader program that comes on new Mac computers, iPhones, iPads, and iPod touches.
+      </p>
+      <br>
+      
+      <h2>
+        Getting Started with VoiceOver
+      </h2>
+      <p>
+        You can start (or stop) VoiceOver by pressing <span class="keycap">Command</span> + <span class="keycap">F5</span>.
+        If you are on a laptop, you will likely need to additionally press the <span class="keycap">fn</span> (function) key to activate <span class="keycap">F5</span>.
+      </p>
+      <p>
+        The VoiceOver Activation keys (called <strong>VO</strong> keys) are <span class="keycap">control</span> + <span class="keycap">option</span>.
+        These keys are used to access special VoiceOver commands and functions and will be referenced simply as <span class="keycap">VO</span>.
+        For example, <span class="keycap">VO</span> + <span class="keycap">H</span> (or <span class="keycap">control</span> + <span class="keycap">option</span> + <span class="keycap">H</span>) will open the VoiceOver Help menu.
+      </p>
+      <p>
+        <h3>Notes:</h3>
+        <ul>
+          <li>
+            VoiceOver currently only functions with the Safari and (with limited support) Opera web browsers.
+            It can also access most OS X native applications and functions. This article will only focus on accessing web content with Safari.
+          </li>
+          <li>
+            Remember that screen reader users typically do not use a mouse. As you become more comfortable with VoiceOver, try using only the keyboard.
+          </li>
+          <li>
+            Most browser shortcut keys will work when using VoiceOver.
+          </li>
+        </ul>
+      </p>
+      <br>
+      
+      <h2>
+        Reading
+      </h2>
+      <p>
+        There are dozens of keyboard shortcuts that allow you to read web content. The following is a list of essential reading shortcuts. With these shortcuts, you should be able to read through most content.
+      </p>
+
+      <ul style="line-height:2">
+      	<li><span class="keycap">VO</span> + <span class="keycap">A</span>: Start reading</li>
+      	<li><span class="keycap">control</span>: Stop Reading</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">→</span>: Read next item</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">←</span>: Read previous item</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">P</span>: Read paragraph</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">S</span>: Read sentence</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">W</span>: Read word (press W multiple times to spell words alphabetically and phonetically)</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">B</span>: Read from top to current location</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">Home</span>: Jump to top of page (on laptop keyboards, <span class="keycap">fn</span> + <span class="keycap">←</span> is Home)</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">End</span>: Jump to bottom of page (on laptop keyboards, <span class="keycap">fn</span> + <span class="keycap">→</span> is End)</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">command</span> + <span class="keycap">←</span> / <span class="keycap">→</span>: Select speech setting option (speaking rate, voice, pitch, etc.). Use <span class="keycap">VO</span> + <span class="keycap">command</span> + <span class="keycap">↑</span> / <span class="keycap">↓</span> to modify the selected speech setting</li>
+      </ul>
+      <br>
+      
+      
+      <h2>
+        Navigation
+      </h2>
+      <p>
+        Sighted users visually navigate through web content in a number of ways.
+        They skim for headings, lists, tables, etc. Most of these methods are available to VoiceOver users if the web page is correctly structured and well organized.
+      </p>
+
+      <p>
+        The following shortcuts will help you navigate common page elements. You can press the <span class="keycap">shift</span> key with these commands to move to the previous occurrence.
+      </p>
+
+      <ul style="line-height:2">
+      	<li><span class="keycap">tab</span>: Next link or form control</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">command</span> + <span class="keycap">L</span>: Next link</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">command</span> + <span class="keycap">H</span>: Next heading</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">command</span> + <span class="keycap">J</span>: Next form control</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">command</span> + <span class="keycap">T</span>: Next table</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">command</span> + <span class="keycap">X</span>: Next list</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">command</span> + <span class="keycap">G</span>: Next graphic</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">space</span>: Activate a link or form control</li>
+      </ul>
+
+      <p>
+        Many other navigation shortcuts are available in the <a href="http://www.apple.com/accessibility/voiceover/downloads.html">VoiceOver Commands Chart</a>.
+      </p>
+
+      <p>VoiceOver also provides nifty functionality in the rotor, which provides quick access to various page elements.
+         Open the rotor by pressing <span class="keycap">VO</span> + <span class="keycap">U</span>, then use the <span class="keycap">←</span> and <span class="keycap">→</span> keys to choose between Tables, Frames, Images, Headers (heading elements), Links, Auto Web Spots (automatically generated list of structural and significant items on the page), Form controls, Web spots (user-identified page areas), Visited links, and Non-visited links. Once a page element type is selected, use the <span class="keycap">↑</span> and <span class="keycap">↓</span> keys to select a particular element and <span class="keycap">enter</span> to activate it.
+      </p>
+
+      <p>Within the rotor, you can begin typing to filter the available elements. For example, with the Headers rotor open, pressing "2" will filter to second level headings. Typing "nav" will filter to the headings that contain those characters. Try this on this page to filter to specific headings. The rotor allows you to get a quick overview of the structure of a web page and allows access to many elements in the page.</p>
+      <br>
+      
+      <h2>Other useful shortcut keys</h2>
+      <ul style="line-height:2">
+      	<li><span class="keycap">shift</span> + <span class="keycap">VO</span> + <span class="keycap">F</span>: Find menu - find a wide variety of page elements</li>
+      	<li><span class="keycap">shift</span> + <span class="keycap">VO</span> + <span class="keycap">I</span>: Read webpage statistics - get an overview of the web page contents</li>
+      	<li><span class="keycap">shift</span> + <span class="keycap">VO</span> + <span class="keycap">M</span>: Open shortcut menu - the same as right clicking on an item</li>
+      	<li><span class="keycap">shift</span> + <span class="keycap">VO</span> + <span class="keycap">?</span>: Online help</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">F8</span>: VoiceOver Utility - change VoiceOver settings and customizations</li>
+      	<li><span class="keycap">command</span> + <span class="keycap">L</span>: Browser address bar</li>
+      	<li><span class="keycap">VO</span> + <span class="keycap">M</span>: Menu bar - navigate through the browser menus</li>
+      </ul>
+    </section>
+  </template>
+  <script>
+
+    Polymer({
+
+      is: 'slide-6'
+
+    });
+
+  </script>
+
+</dom-module>
+<!--
+
+-->

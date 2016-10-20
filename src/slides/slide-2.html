@@ -12,13 +12,20 @@
       h1 {
         border-left: 4px solid blue;
         padding-left: 10px;
+        font-size: 2em;
       }
       
       h2 {
         border-left: 4px solid green;
         padding-left: 10px;
       }
-
+      h3 {
+        border-left: 4px solid red;
+        padding-left: 10px
+      }
+      p {
+        padding-left:10px;
+      }
       pre {
         background-color: beige;
         display: inline-block;
@@ -31,12 +38,11 @@
 
     </style>
 
-    <div  class="container">
+    <section class="container">
       <h1>
         Focus
       </h1>
-      
-      
+      <br>
       <h2>
         What is Focus?
       </h2>
@@ -47,7 +53,7 @@
           If you press the tab key while in a focusable controll then the focus will move to the next focusable input on the page.
         </p>
       </p>
-      
+      <br>
       
       <h2>
         Why is focus important?
@@ -63,21 +69,21 @@ All page functionality is available using the keyboard, unless the functionality
 cannot be accomplished in any known way using a keyboard (e.g., free hand drawing).
         </pre>
       </p>
-      
+      <br>
       
       <h2>
         Who does a good focus strategy benefit?
       </h2>
       <p>
-        Since we all know how to use a keyboard, its very easy to relate to and test, a good focus strategy benefits virtually all of our users.<br>
-        Specifically:
+        Since we all know how to use a keyboard, its very easy to relate to and test, a good focus strategy benefits virtually all of our users,<br>
+        specifically:
         <ul>
           <li>People with motor impairments  (paralysis or broken arm)</li>
           <li>Power users</li>
           <li>Users reliant on assistive technology</li>
         </ul>
       </p>
-      
+      <br>
       
       <h2>
         How does an element become focusable?
@@ -91,7 +97,7 @@ cannot be accomplished in any known way using a keyboard (e.g., free hand drawin
           <li>The element is not disabled.</li>
         </ul>
       </p>
-      
+      <br>
       
       <h2>
         Implicitly focusable HTML elements
@@ -107,10 +113,9 @@ cannot be accomplished in any known way using a keyboard (e.g., free hand drawin
           <li>HTMLButtonElement</li>
           <li>HTMLIFrameElement</li>
           <li>Any element with a tabindex > 0</li>
-          <li>... non-exhaustive list</li>
         </ul>
       </p>
-    </div>
+    </section>
 
   </template>
 

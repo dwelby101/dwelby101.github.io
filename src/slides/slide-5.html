@@ -6,18 +6,25 @@
       :host {
         display: block;
         padding: 10px;
+        max-width: 100%;
       }
       
       h1 {
         border-left: 4px solid blue;
         padding-left: 10px;
+        font-size: 2em;
       }
-      
       h2 {
         border-left: 4px solid green;
         padding-left: 10px;
       }
-
+      h3 {
+        border-left: 4px solid red;
+        padding-left: 10px
+      }
+      p {
+        padding-left:10px;
+      }
       pre {
         background-color: beige;
       }
@@ -43,7 +50,11 @@
       .container {
         padding-bottom: 10%;
       }
-      
+      .acc-img {
+        margin: 0 auto;
+        width: 400px;
+        height: 300px;
+      }
       .tag {
         color: #3b78e7;
       }
@@ -53,11 +64,11 @@
 
     </style>
     
-    <div class="container">
+    <section class="container">
       <h1>
         Semantics & Accessibility
       </h1>
-      
+      <br>
       
       <h2>
         What is semantics?
@@ -66,7 +77,7 @@
         Semantics is defined as the branch of linguistics and logic concerned with meaning.
         In web development this relates to the meaning of elements rendered on our screen.
       </p>
-      
+      <br>
       <h2>
         Why is semantics important?
       </h2>
@@ -79,11 +90,13 @@
           In this case it would be more semantically correct to use the button HTML element.
         </div>
         <br>
-        When thinking about accessibility and the assistive technology that's used to help users interact with our content semantics become really important.
-        Assistive tech such as screen readers will rely on the semantic meaning of HTML elements to communicate the relevant information to the user.
-        <img src="https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/imgs/nativecodetoacc.png" alt="semantic rendering and meaning" />
+        <p>
+          When thinking about accessibility and the assistive technology that's used to help users interact with our content semantics become really important.
+          Assistive tech such as screen readers will rely on the semantic meaning of HTML elements to communicate the relevant information to the user.
+          <img src="https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/imgs/nativecodetoacc.png" alt="semantic HTML meaning from visual through DOM Object to Accessibility node" />
+        </p>
       </p>
-      
+      <br>
       
       <h2>
         Screen readers
@@ -100,9 +113,9 @@
         <br><br>
         <b>Note:</b> WebAIM's WCAG 2.0 Guideline 1.1 states " Provide text alternatives for any non-text content".
       </p>
-      
+      <br>
       <div class="wrap">
-      <h3>Examples</h3>
+      <h2>Examples</h2>
         <h4>Button</h4>
         <pre><code>
             <span class="tag">&lt;button&gt;</span><span class="pln">Button</span><span class="tag">&lt;/button&gt;</span>
@@ -115,13 +128,25 @@
         <h4>Inputs</h4>
         Not all HTML elements have built in name or label attributes so it is important to associate labels to inputs that require them.
         <pre><code>
-            <span class="tag">&lt;input type='checkbox' checked name='jLetter' id='letter'&gt;</span>
-            <span class="tag">&lt;label for='letter'&gt;</span><span class="tag">&lt;/label&gt;</span>
+            <span class="tag">&lt;input type="checkbox" checked name="jLetter" id="letter"&gt;</span>
+            <span class="tag">&lt;label for="letter"&gt;</span><span class="tag">&lt;/label&gt;</span>
         </code></pre>
         <input type="checkbox" checked name="jLetter" id="letter">
         <label for="letter">Give away email to evil corp?</label>
+        <h4>Images & alt text</h4>
+        One of the most basic techniques of web accessibility is adding alternative texts to images. It is possibly the single biggest thing you can do to make your site more accessible. 
+        <pre><code>
+          <span class="tag">&lt;img src="accessibility.png" alt="Laptop with 'Accessibility' displayed on screen and branches 
+            of accessibility iconography coming from laptop."&gt;</span>
+          <br>
+          <span class="tag">&lt;img src="wronglocation.png" alt="Laptop with 'Accessibility' displayed on screen and branches 
+              of accessibility iconography coming from laptop."&gt;</span>
+        </code></pre>
+        <br>
+        <img class="acc-img" src="../../images/accessibility.png" alt="Laptop with 'Accessibility' displayed on screen and branches of accessibility iconography coming from laptop." />
+        <img class="acc-img" src="../../images/wronglocation.png" alt="Laptop with 'Accessibility' displayed on screen and branches of accessibility iconography coming from laptop." />
       </div>
-    </div>
+    </section>
     
   </template>
   <script>
@@ -135,3 +160,6 @@
   </script>
 
 </dom-module>
+<!--
+
+-->

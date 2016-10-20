@@ -11,13 +11,20 @@
       h1 {
         border-left: 4px solid blue;
         padding-left: 10px;
+        font-size: 2em;
       }
       
       h2 {
         border-left: 4px solid green;
         padding-left: 10px;
       }
-
+      h3 {
+        border-left: 4px solid red;
+        padding-left: 10px
+      }
+      p {
+        padding-left:10px;
+      }
       pre {
         background-color: beige;
       }
@@ -40,18 +47,20 @@
       .container {
         padding-bottom: 10%;
       }
-      
+      .wrap {
+        padding: 0 5%;
+      }
       .tag {
         color: #3b78e7;
       }
 
     </style>
     
-    <div class="container">
+    <section class="container">
       <h1>
         Tabindex
       </h1>
-      
+      <br>
       
       <h2>
         What is tabindex?
@@ -71,7 +80,7 @@
         <li>It can define the tab order of a DOM element (considered anti-pattern)</li>
         <li>It can remove focusability from a DOM element</li>
       </ul>
-      
+      <br>
       
       <h2>
         Why use tabindex?
@@ -83,58 +92,61 @@
           <li>For single page applications where a user may click a button that updates the DOM, tabindex can help us focus the relevant content - this is especially helpful for screen readers.</li>
         </ul>
       </p>
-      
+      <br>
       
       <h2>
         Example use cases
       </h2>
-      <p>
-        <h3>tabindex = -1</h3>
-        This is used for removing an element from the natural tab order, but the element can still be focused using the  <code>focus()</code> method.
-        <pre><code>
-          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"foo"</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"-1"</span><span class="tag">&gt;</span><span class="pln">I'm not keyboard focusable</span><span class="tag">&lt;/button&gt;</span>
-          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">on-tap</span><span class="pun">=</span><span class="atv">"</span><span class="pln">handleTap</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">Focus my sibling</span><span class="tag">&lt;/button&gt;</span>
-        </code></pre>
-        <button id="foo" tabindex="-1">I'm not keyboard focusable</button>
-        <button on-tap="handleTap"> my sibling</button>
-      </p>
-        
-      <br>
-      <p>
-        <h3>tabindex = 0</h3>
-        This is used for allowing an element to be focusable, it places the element in the natural tab order.
-        <pre><code>
-          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"0"</span><span class="tag">&gt;</span><span class="pln">one</span><span class="tag">&lt;/button&gt;</span>
-          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"0"</span><span class="tag">&gt;</span><span class="pln">two</span><span class="tag">&lt;/button&gt;</span>
-          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"0"</span><span class="tag">&gt;</span><span class="pln">three</span><span class="tag">&lt;/button&gt;</span>
-        </code></pre>
-      
-        <div>
-          <div class="button" tabindex="0">one</div>
-          <div class="button" tabindex="0">two</div>
-          <div class="button" tabindex="0">three</div>
-        </div>
-      </p>
       
       <br>
-      <p>
+      <div class="wrap">
         <h3>tabindex = 3, 2, 1 (anti-pattern)</h3>
-        Any tabindex greater than 0 jumps the element to the front of the natural tab order.<br>
-        If there are multiple elements with a tabindex greater than 0, the tab order starts from the lowest value that is greater than zero and works its way up.<br>
-        Using a tabindex greater than 0 is considered an anti-pattern.
-        <pre><code>
-          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"3"</span><span class="tag">&gt;</span><span class="pln">one</span><span class="tag">&lt;/button&gt;</span>
-          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"2"</span><span class="tag">&gt;</span><span class="pln">two</span><span class="tag">&lt;/button&gt;</span>
-          <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"1"</span><span class="tag">&gt;</span><span class="pln">three</span><span class="tag">&lt;/button&gt;</span>
-        </code></pre>
-      
-        <div>
-          <div class="button" tabindex="3">one</div>
-          <div class="button" tabindex="2">two</div>
-          <div class="button" tabindex="1">three</div>
-        </div>
-      </p>
-    </div>
+        <p>
+          Any tabindex greater than 0 jumps the element to the front of the natural tab order.<br>
+          If there are multiple elements with a tabindex greater than 0, the tab order starts from the lowest value that is greater than zero and works its way up.<br>
+          Using a tabindex greater than 0 is considered an anti-pattern.
+          <pre><code>
+            <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"3"</span><span class="tag">&gt;</span><span class="pln">one</span><span class="tag">&lt;/button&gt;</span>
+            <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"2"</span><span class="tag">&gt;</span><span class="pln">two</span><span class="tag">&lt;/button&gt;</span>
+            <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"1"</span><span class="tag">&gt;</span><span class="pln">three</span><span class="tag">&lt;/button&gt;</span>
+          </code></pre>
+        
+          <div>
+            <div class="button" tabindex="3">one</div>
+            <div class="button" tabindex="2">two</div>
+            <div class="button" tabindex="1">three</div>
+          </div>
+        </p>
+        <br>
+        <h3>tabindex = -1</h3>
+        <p>
+          This is used for removing an element from the natural tab order, but the element can still be focused using the  <code>focus()</code> method.
+          <pre><code>
+            <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"foo"</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"-1"</span><span class="tag">&gt;</span><span class="pln">I'm not keyboard focusable</span><span class="tag">&lt;/button&gt;</span>
+            <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">on-tap</span><span class="pun">=</span><span class="atv">"</span><span class="pln">handleTap</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">Focus my sibling</span><span class="tag">&lt;/button&gt;</span>
+          </code></pre>
+          <button id="foo" tabindex="-1">I'm not keyboard focusable</button>
+          <button on-tap="handleTap"> my sibling</button>
+        </p>
+          
+        <br>
+        <h3>tabindex = 0</h3>
+        <p>
+          This is used for allowing an element to be focusable, it places the element in the natural tab order.
+          <pre><code>
+            <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"0"</span><span class="tag">&gt;</span><span class="pln">one</span><span class="tag">&lt;/button&gt;</span>
+            <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"0"</span><span class="tag">&gt;</span><span class="pln">two</span><span class="tag">&lt;/button&gt;</span>
+            <span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">tabindex</span><span class="pun">=</span><span class="atv">"0"</span><span class="tag">&gt;</span><span class="pln">three</span><span class="tag">&lt;/button&gt;</span>
+          </code></pre>
+        
+          <div>
+            <div class="button" tabindex="0">one</div>
+            <div class="button" tabindex="0">two</div>
+            <div class="button" tabindex="0">three</div>
+          </div>
+        </p>
+      </div>
+    </section>
   </template>
   <script>
 
