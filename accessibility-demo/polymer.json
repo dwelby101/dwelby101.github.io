@@ -1,0 +1,9 @@
+{
+  "entrypoint": "./index.html",
+  "shell": "./my-app.html",
+  "fragments": [
+    "./view-1.html",
+    "./vote-a.html",
+    "./vote-b.html"
+  ]
+}
