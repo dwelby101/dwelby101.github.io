@@ -1,0 +1,108 @@
+<html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animatable.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+<link rel="import" href="./slides/slide-1.html">
+<link rel="import" href="./slides/slide-2.html">
+<link rel="import" href="./slides/slide-3.html">
+<link rel="import" href="./slides/slide-4.html">
+<link rel="import" href="./slides/slide-5.html">
+<link rel="import" href="./slides/slide-6.html">
+<link rel="import" href="./slides/slide-7.html">
+<link rel="import" href="./slides/slide-8.html">
+
+
+</head><body><dom-module id="view-1">
+  
+  <template>
+    <style>
+        body {
+          overflow: scroll;
+          @apply(--layout);
+        }
+        .toolbar {
+          position: relative;
+          padding: 8px;
+          background-color: #4285f4;
+          z-index: 12;
+        }
+        .slide-num {
+          float: right;
+          display: inline-block;
+          color: white;
+          font-size: 1.5em;
+          padding-left: 20px;
+        }
+        :focus {
+          border: 2px solid red;
+          background-color: red;
+        }
+        
+        neon-animated-pages {
+          @apply(--layout-flex);
+        }
+        neon-animatable {
+          margin-top: 100px;
+          display: block;
+          overflow: auto;
+          width: 70%;
+          height: 100%;
+          padding: 0 15%;
+          color: #444;
+          @apply(--layout);
+          @apply(--layout-flex-3);
+          background: white;
+        }
+        neon-animatable:nth-child(3) {
+        }
+        neon-animatable:nth-child(4) {
+        }
+        neon-animatable:nth-child(5) {
+        }
+    </style>
+
+     <div class="toolbar">
+       <button aria-label="Previous slide" on-click="_onPrevClick">⇦</button>
+       <button aria-label="Next slide" on-click="_onNextClick">⇨</button>
+       <button aria-label="Previous slide" on-click="_onUpClick">⇧</button>
+       <button aria-label="Next slide" on-click="_onDownClick">⇩</button>
+       <div class="slide-num">
+         Slide: [[selected]]
+       </div>
+     </div>
+
+     <neon-animated-pages id="pages" style="display:table-row" class="[[applied]]" selected="[[selected]]" entry-animation="[[entryAnimation]]" exit-animation="[[exitAnimation]]">
+       <neon-animatable>
+         <slide-1></slide-1>
+       </neon-animatable>
+       <neon-animatable>
+         <slide-2></slide-2>
+       </neon-animatable>
+       <neon-animatable>
+         <slide-3></slide-3>
+       </neon-animatable>
+       <neon-animatable>
+         <slide-4></slide-4>
+       </neon-animatable>
+       <neon-animatable>
+         <slide-5></slide-5>
+       </neon-animatable>
+       <neon-animatable>
+         <slide-6></slide-6>
+       </neon-animatable>
+       <neon-animatable>
+         <slide-7></slide-7>
+       </neon-animatable>
+       <neon-animatable>
+         <slide-8></slide-8>
+       </neon-animatable>
+     </neon-animated-pages>
+   </template>
+  <script>Polymer({is:"view-1",properties:{selected:{type:Number,value:0},fulscreen:{type:Boolean,value:!1},applied:{type:String,value:""}},_onPrevClick:function(){this.entryAnimation="slide-from-left-animation",this.exitAnimation="slide-right-animation",this.selected=0===this.selected?7:this.selected-1},_onNextClick:function(){this.entryAnimation="slide-from-right-animation",this.exitAnimation="slide-left-animation",this.selected=7===this.selected?0:this.selected+1},_onUpClick:function(){this.entryAnimation="slide-from-top-animation",this.exitAnimation="slide-down-animation",this.selected=7===this.selected?0:this.selected+1},_onDownClick:function(){this.entryAnimation="slide-from-bottom-animation",this.exitAnimation="slide-up-animation",this.selected=0===this.selected?7:this.selected-1}});</script>
+
+</dom-module>
+/*
+    
+*/</body></html>

@@ -1,0 +1,154 @@
+<html><head></head><body><dom-module id="slide-5">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+        padding: 10px;
+        max-width: 100%;
+      }
+      
+      h1 {
+        border-left: 4px solid blue;
+        padding-left: 10px;
+        font-size: 2em;
+      }
+      h2 {
+        border-left: 4px solid green;
+        padding-left: 10px;
+      }
+      h3 {
+        border-left: 4px solid red;
+        padding-left: 10px
+      }
+      p {
+        padding-left:10px;
+      }
+      pre {
+        background-color: beige;
+      }
+      button {
+        font-size: 30px;
+      }
+      img {
+        width: 100%;
+      }
+      .button {
+        display: inline-block;
+        align-items: flex-start;
+        text-align: center;
+        cursor: default;
+        color: buttontext;
+        background-color: buttonface;
+        box-sizing: border-box;
+        padding: 2px 6px 3px;
+        border-width: 2px;
+        border-style: outset;
+        border-color: buttonface;
+      }
+      .container {
+        padding-bottom: 10%;
+      }
+      .acc-img {
+        margin: 0 auto;
+        width: 400px;
+        height: 300px;
+      }
+      .tag {
+        color: #3b78e7;
+      }
+      .wrap {
+        padding: 0 5%;
+      }
+
+    </style>
+    
+    <section class="container">
+      <h1>
+        Semantics &amp; Accessibility
+      </h1>
+      <br>
+      
+      <h2>
+        What is semantics?
+      </h2>
+      <p>
+        Semantics is defined as the branch of linguistics and logic concerned with meaning.
+        In web development this relates to the meaning of elements rendered on our screen.
+      </p>
+      <br>
+      <h2>
+        Why is semantics important?
+      </h2>
+      <p>
+        In HTML semantics is quite important because it allows us to apply logical meaning to elements on the DOM.
+
+        </p><div class="wrap">
+          <h3>Example</h3>
+          A button could be rendered using a styled div, span or link element however extra work is then required to apply the correct semantic meaning and get it to behave like a button.
+          In this case it would be more semantically correct to use the button HTML element.
+        </div>
+        <br>
+        <p>
+          When thinking about accessibility and the assistive technology that's used to help users interact with our content semantics become really important.
+          Assistive tech such as screen readers will rely on the semantic meaning of HTML elements to communicate the relevant information to the user.
+          <img src="https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/imgs/nativecodetoacc.png" alt="semantic HTML meaning from visual through DOM Object to Accessibility node">
+        </p>
+      <p></p>
+      <br>
+      
+      <h2>
+        Screen readers
+      </h2>
+      <p>
+        You should expect a well-designed reader to tell you all, or at least most, of the following information about the elements it encounters.
+        </p><ul>
+          <li>The element's role or type, if it is specified (it should be).</li>
+          <li>The element's name or label, if it has one (it should).</li>
+          <li>The element's value, if it has one (it may or may not).</li>
+          <li>The element's state, e.g., whether it is enabled or disabled (if applicable).</li>
+        </ul>
+        Therefore, if you have not used a semantically correct HTML element you should apply all of the required information using ARIA to make it accessible.
+        <br><br>
+        <b>Note:</b> WebAIM's WCAG 2.0 Guideline 1.1 states " Provide text alternatives for any non-text content".
+      <p></p>
+      <br>
+      <div class="wrap">
+      <h2>Examples</h2>
+        <h4>Button</h4>
+        <pre><code>
+            <span class="tag">&lt;button&gt;</span><span class="pln">Button</span><span class="tag">&lt;/button&gt;</span>
+            <span class="tag">&lt;button disabled&gt;</span><span class="pln">Button</span><span class="tag">&lt;/button&gt;</span>
+        </code></pre>
+        <button>My Button</button>
+        <button disabled="">My Button</button>
+        <br>
+        <br>
+        <h4>Inputs</h4>
+        Not all HTML elements have built in name or label attributes so it is important to associate labels to inputs that require them.
+        <pre><code>
+            <span class="tag">&lt;input type="checkbox" checked name="jLetter" id="letter"&gt;</span>
+            <span class="tag">&lt;label for="letter"&gt;</span><span class="tag">&lt;/label&gt;</span>
+        </code></pre>
+        <input type="checkbox" checked="" name="jLetter" id="letter">
+        <label for="letter">Give away email to evil corp?</label>
+        <h4>Images &amp; alt text</h4>
+        One of the most basic techniques of web accessibility is adding alternative texts to images. It is possibly the single biggest thing you can do to make your site more accessible. 
+        <pre><code>
+          <span class="tag">&lt;img src="accessibility.png" alt="Laptop with 'Accessibility' displayed on screen and branches 
+            of accessibility iconography coming from laptop."&gt;</span>
+          <br>
+          <span class="tag">&lt;img src="wronglocation.png" alt="Laptop with 'Accessibility' displayed on screen and branches 
+              of accessibility iconography coming from laptop."&gt;</span>
+        </code></pre>
+        <br>
+        <img class="acc-img" src="../../images/accessibility.png" alt="Laptop with 'Accessibility' displayed on screen and branches of accessibility iconography coming from laptop.">
+        <img class="acc-img" src="../../images/wronglocation.png" alt="Laptop with 'Accessibility' displayed on screen and branches of accessibility iconography coming from laptop.">
+      </div>
+    </section>
+    
+  </template>
+  <script>Polymer({is:"slide-5"});</script>
+
+</dom-module>
+</body></html>

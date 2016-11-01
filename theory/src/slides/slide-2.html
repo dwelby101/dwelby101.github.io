@@ -1,0 +1,123 @@
+<html><head></head><body><dom-module id="slide-2">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+        padding: 10px;
+      }
+      
+      h1 {
+        border-left: 4px solid blue;
+        padding-left: 10px;
+        font-size: 2em;
+      }
+      
+      h2 {
+        border-left: 4px solid green;
+        padding-left: 10px;
+      }
+      h3 {
+        border-left: 4px solid red;
+        padding-left: 10px
+      }
+      p {
+        padding-left:10px;
+      }
+      pre {
+        background-color: beige;
+        display: inline-block;
+        padding: 20px 20px 0;
+        margin-left: 50px;
+      }
+      .container {
+        padding-bottom: 10%;
+      }
+
+    </style>
+
+    <section class="container">
+      <h1>
+        Focus
+      </h1>
+      <br>
+      <h2>
+        What is Focus?
+      </h2>
+      <p>
+        Focus refers to the controll on the screen that recieves input from the keyboard when you type or from the clipboard when you paste.<br>
+        <small>Example: clicking on a text input before typing is bringing that input into focus.</small>
+        </p><p>
+          If you press the tab key while in a focusable controll then the focus will move to the next focusable input on the page.
+        </p>
+      <p></p>
+      <br>
+      
+      <h2>
+        Why is focus important?
+      </h2>
+      <p>
+        Some users interact with their computers entirely through a keyboard or some other input that relies on focus,
+        for those users focus is critical as it's their primary means to navigate the web page.
+      </p>
+      <p>
+        This is why WebAIM WCAG 2.0 checklist item 2.1.1 states that: <br>
+        </p><pre>All page functionality is available using the keyboard, unless the functionality
+cannot be accomplished in any known way using a keyboard (e.g., free hand drawing).
+        </pre>
+      <p></p>
+      <br>
+      
+      <h2>
+        Who does a good focus strategy benefit?
+      </h2>
+      <p>
+        Since we all know how to use a keyboard, its very easy to relate to and test, a good focus strategy benefits virtually all of our users,<br>
+        specifically:
+        </p><ul>
+          <li>People with motor impairments  (paralysis or broken arm)</li>
+          <li>Power users</li>
+          <li>Users reliant on assistive technology</li>
+        </ul>
+      <p></p>
+      <br>
+      
+      <h2>
+        How does an element become focusable?
+      </h2>
+      <p>
+        An element is focusable if all of the following conditions are met:
+        </p><ul>
+          <li>The element's tabindex focus flag is set.</li>
+          <li>The element is either being rendered or is a descendant of a canvas element that represents embedded content.</li>
+          <li>The element is not inert.</li>
+          <li>The element is not disabled.</li>
+        </ul>
+      <p></p>
+      <br>
+      
+      <h2>
+        Implicitly focusable HTML elements
+      </h2>
+      <p>
+        Today's browsers define <code>focus()</code> on HTMLElement, but an element won't actually take focus unless it's one of:
+        </p><ul>
+          <li>HTMLAnchorElement with an href</li>
+          <li>HTMLAreaElement with an href</li>
+          <li>HTMLInputElement</li>
+          <li>HTMLSelectElement</li>
+          <li>HTMLTextAreaElement</li>
+          <li>HTMLButtonElement</li>
+          <li>HTMLIFrameElement</li>
+          <li>Any element with a tabindex &gt; 0</li>
+        </ul>
+      <p></p>
+    </section>
+
+  </template>
+
+  <script>Polymer({is:"slide-2"});</script>
+
+</dom-module>
+</body></html>

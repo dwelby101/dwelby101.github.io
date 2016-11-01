@@ -1,0 +1,131 @@
+<html><head></head><body><dom-module id="slide-1">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+        padding: 10px;
+      }
+      
+      h1 {
+        border-left: 4px solid blue;
+        padding-left: 10px;
+        font-size: 2em;
+      }
+      
+      h2 {
+        border-left: 4px solid green;
+        padding-left: 10px;
+      }
+      h3 {
+        border-left: 4px solid red;
+        padding-left: 10px
+      }
+      p {
+        padding-left:10px;
+      }
+      .container {
+        padding-bottom: 10%;
+      }
+      .list-wrap {
+        margin-left: 50px;
+      }
+      
+    </style>
+
+    <section class="container">
+      <h1>
+        Accessibility
+      </h1>
+      <br>
+      <h2>
+        What is accessibility?
+      </h2>
+      <p>
+        "Accessibility means access. It refers to the ability for everyone, regardless of disability or special needs,
+         to access, use and benefit from everything within their environment.
+          It is the “degree to which a product, device, service, or environment is available to as many people as possible."
+      </p>
+      <br>
+      <h2>
+        What does accessibility try to address?
+      </h2>
+      <p>
+        When developing with accessibility in mind there are key areas that need to be taken into account, these include:
+
+        </p><div class="list-wrap">
+          <h3>Visual</h3>
+          <ul>
+            <li>Blindness</li>
+            <li>Low vision</li>
+            <li>Colour-blindness</li>
+          </ul>
+          <h3>Hearing</h3>
+          <ul>
+            <li>Deafness </li>
+            <li>Hard-of-hearing</li>
+          </ul>
+          <h3>Motor</h3>
+          <ul>
+            <li>Inability to use a mouse</li>
+            <li>Slow response time</li>
+            <li>Limited fine motor</li>
+          </ul>
+          <h3>Cognitive</h3>
+          <ul>
+            <li>Learning disabilities</li>
+            <li>Distractibility</li>
+            <li>Inability to remember or focus on large amounts of information</li>
+          </ul>
+        </div>
+      <p></p>
+      <br>
+      <h2>
+        How can we create products that cater for these areas?
+      </h2>
+      <p>
+        The most widely recognised guidelines are those provided by WC3 and are known as <b>"Web Content Accessibility Guidelines"</b> or <b>WCAG</b>.
+        WCAG are organised around four core principles (P.O.U.R.):
+        </p><div class="list-wrap">
+          <h3>Percievable</h3>
+          <ul>
+            <li>
+              Available to the senses (vision and hearing primarily) either through the browser or through assistive technologies (e.g. screen readers, screen enlargers, etc.)
+            </li>
+          </ul>
+          <h3>Operable</h3>
+          <ul>
+            <li>
+              Users can interact with all controls and interactive elements using either the mouse, keyboard, or an assistive device.
+            </li>
+          </ul>
+          <h3>Understandable</h3>
+          <ul>
+            <li>
+              Content is clear and limits confusion and ambiguity.
+            </li>
+          </ul>
+          <h3>Robust</h3>
+          <ul>
+            <li>
+              A wide range of technologies (including old and new user agents and assistive technologies) can access the content.
+            </li>
+          </ul>
+        </div>
+        <p>
+          Note: WCAG is only a guideline and should be used inline with real user testing and good user experience.
+        </p>
+      <p></p>
+      <br><br>
+      <div style="margin: 0 auto">
+        <iframe z-index="9999" width="560" height="315" src="https://www.youtube.com/embed/LdVlbO7_hz8" frameborder="0" allowfullscreen=""></iframe>
+      </div>
+    </section>
+
+  </template>
+
+  <script>Polymer({is:"slide-1"});</script>
+
+</dom-module>
+</body></html>

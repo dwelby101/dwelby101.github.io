@@ -1,0 +1,118 @@
+<html><head></head><body><dom-module id="slide-3">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+        padding: 10px;
+      }
+      
+      
+      h1 {
+        border-left: 4px solid blue;
+        padding-left: 10px;
+        font-size: 2em;
+      }
+      
+      h2 {
+        border-left: 4px solid green;
+        padding-left: 10px;
+      }
+      h3 {
+        border-left: 4px solid red;
+        padding-left: 10px
+      }
+      p {
+        padding-left:10px;
+      }
+      pre {
+        background-color: beige;
+      }
+      
+      button {
+        font-size: 30px;
+      }
+      .container {
+        padding-bottom: 10%;
+      }
+      .wrap {
+        padding: 0 5%;
+      }
+      .tag {
+        color: #3b78e7;
+      }
+
+    </style>
+    
+    <section class="container">
+      <h1>
+        DOM Order
+      </h1>
+      <br>
+      
+      <h2>
+        What does DOM order mean?
+      </h2>
+      <p>
+        When we talk about DOM order we mean the order in which the markup is written.
+        <br>
+        <br>
+        When building a web page / application it is possible, with CSS, to visually re-order the DOM so that parts of the DOM appear on screen in a different order to how they are ordered in the markup.
+      </p>
+      <br>
+      
+      <h2>
+        Why is DOM order important?
+      </h2>
+      <p>
+        DOM order is important for users who rely on the keyboard for navigation &amp; users who rely on screen readers for consuming the content.<br>
+        Changing the visual position of elements on screen using CSS can cause the tab order to jump around, seemingly at random, confusing users who rely on the keyboard.
+        <br><br>
+        </p><h3>Note</h3>
+        <p>
+          For this reason, the Web AIM checklist states in section 1.3.2 that the reading and navigation order, as determined by code order, should be logical and intuitive.
+        </p>
+        <br>
+        <br>
+        <div class="wrap">
+          Natural DOM order:
+          <pre><code>
+              <span class="tag">&lt;button&gt;</span><span class="pln">I Should</span><span class="tag">&lt;/button&gt;</span>
+              <span class="tag">&lt;button&gt;</span><span class="pln">Be Focused</span><span class="tag">&lt;/button&gt;</span>
+              <span class="tag">&lt;button&gt;</span><span class="pln">Last!</span><span class="tag">&lt;/button&gt;</span>
+            </code></pre>
+          <button>I Should</button>
+          <button>Be Focused</button>
+          <button>Last!</button>
+          <br>
+          <br>
+          <br>
+          DOM order edited with CSS:
+          <pre><code>
+              <span class="tag">&lt;button style="float: right;"&gt;</span><span class="pln">I Should</span><span class="tag">&lt;/button&gt;</span>
+              <span class="tag">&lt;button&gt;</span><span class="pln">Be Focused</span><span class="tag">&lt;/button&gt;</span>
+              <span class="tag">&lt;button&gt;</span><span class="pln">Last!</span><span class="tag">&lt;/button&gt;</span>
+            </code></pre>
+          <button style="float:right">I Should</button>
+          <button>Be Focused</button>
+          <button>Last!</button>
+        </div>
+      <p></p>
+      <br><br>
+      <p>
+        <img src="../../images/dom-tree.png" alt="dom tree visualised as accessibility tree read by assistive technology and percieved by the end user.">
+      </p>
+      <br>
+      
+      <h2>
+        How can we test that the DOM order makes sense?
+      </h2>
+      <p>
+        Try tabbing through your pages every so often just to make sure you haven't accidentally messed up the tab order. It's a good habit to adopt, and one that doesn't require much effort.
+      </p>
+    </section>
+  </template>
+  <script>Polymer({is:"slide-3"});</script>
+
+</dom-module>
+</body></html>

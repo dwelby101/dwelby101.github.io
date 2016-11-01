@@ -1,0 +1,106 @@
+<html><head><link rel="import" href="../bower_components/polymer/polymer.html">
+
+</head><body><dom-module id="vote-a">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+        padding: 10px;
+      }
+      .card {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        margin: 24px;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #757575;
+      }
+      .circle {
+        display: inline-block;
+        height: 64px;
+        width: 64px;
+        border-radius: 50%;
+        background: #ddd;
+        line-height: 64px;
+        font-size: 30px;
+        color: #555;
+        text-align: center;
+      }
+      .pic-div-wrapper {
+        display: flex;
+        justify-content: space-around;
+      }
+      .pic-wrapper {
+        height: 400px;
+        width: 300px;
+        margin-bottom: 60px;
+      }
+      .picture-div {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      .picture-div:hover {
+        background-image: url('../images/shell.png');
+      }
+      .trumpPic {
+        background-image: url('../images/rump.png');
+      }
+      .trumpPic:hover {
+        transform: scaleX(-1);
+        filter: FlipH;
+      }
+      .clingontonPic {
+        background-image: url('../images/klington.png');
+      }
+      .myButton {
+        background-color:#44c767;
+        border-radius:28px;
+        border:1px solid #18ab29;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:17px;
+        padding:16px 31px;
+      }
+      .myButton:hover {
+        background-color:#5cbf2a;
+      }
+      .myButton:active {
+        position:relative;
+        top:1px;
+      }
+      .myButton-wrapper {
+        margin: 0 auto;
+      }
+      h1 {
+        font-size: 22px;
+        margin: 16px 0;
+        color: #212121;
+      }
+    </style>
+
+    <div class="card">
+      <h1>Vote - Center</h1>
+      <div class="pic-div-wrapper">
+        <div class="pic-wrapper">
+          <div class="trumpPic picture-div">.</div>
+          
+        </div>
+        <div class="pic-wrapper">
+          <div class="clingontonPic picture-div">.</div>
+          
+        </div>
+      </div>
+    </div>
+
+  </template>
+
+  <script>Polymer({is:"vote-a"});</script>
+
+</dom-module>
+</body></html>
